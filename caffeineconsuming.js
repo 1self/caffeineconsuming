@@ -1,3 +1,13 @@
+if(Meteor.isServer){
+    if(Meteor.settings === undefined){
+        throw new Meteor.Error("pass production.settings or sandbox.settings on the command line using --setings");
+    }
+
+    if(Meteor.settings.public.env1self === undefined){
+        throw new Meteor.Error("specify the 1self environment by adding the env1self property under public in settings file");
+    }
+}
+
 if (Meteor.isClient) {
     var config = {
         appId: "app-id-82df18710e9f27239f6fbc8ec24dd10b",
@@ -6,7 +16,7 @@ if (Meteor.isClient) {
         "appVersion": "0.0.1"
     };
 
-	var lib1self = new Lib1self(config, "production");
+    var lib1self = new Lib1self(config,  Meteor.settings.public.env1self);
 
 Meteor.startup(function () {
         var isStreamRegistered = function () {
