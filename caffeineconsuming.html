@@ -1,0 +1,66 @@
+<head>
+  <title>Caffeine Consuming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0"/>
+</head>
+
+<body>
+	<div class="heading">Caffeine Consuming</div>
+	<div class="container fullHeight">
+    		<div class="logActivityTemplate fullHeight">
+        		{{> logging}}
+    		</div>
+    		<div class="showVizTemplate fullHeight" style="display: none;">
+        		{{> selectVisualizations}}
+    		</div>
+	</div>
+	<script src="client/1self.js" type="javascript"></script>
+</body>
+
+<template name="logging">
+
+    <div class="row spacer">
+    	<div class="prompt"> Log your cuppa </div>
+
+        <div class="col-xs-4 col-sm-4 col-lg-4">
+            <div class="logvalue">
+            	<button id="coffee" class="btn-default">Coffee</button>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-lg-4">
+            <div class="logvalue">
+            	<button id="tea" class="btn-default">Tea</button>
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</template>
+
+<template name="selectVisualizations">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-lg-12">
+            <div id="teaViz" class="graphButton">Tea</div>
+            <div id="coffeeViz" class="graphButton">Coffee</div>
+        </div>
+    </div>
+    {{> footer}}
+</template>
+
+<template name="footer">
+    <div class="footer">
+        <div class="row footer-element-container">
+            <div id="displayLogActivityTemplate" class="nav-links col-xs-2 col-sm-2 col-lg-2">
+                <div class="nav-icon glyphicon glyphicon-th-list"></div>
+            </div>
+            <div id="displaySelectVizTemplate" class="nav-links col-xs-2 col-sm-2 col-lg-2">
+                <div class="nav-icon glyphicon glyphicon-signal"></div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+
+
+
+
